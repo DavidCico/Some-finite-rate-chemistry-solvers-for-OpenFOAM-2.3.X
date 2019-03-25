@@ -21,13 +21,10 @@ Duwig, Christophe, et al. Large Eddy Simulations of a piloted lean premix jet fl
 
 ## Instructions on program
 
-All solvers require to:
+To compile any solver, go inside the folder of the desired one and execute the command:
 
-1. Add thermodynamic pressure level in constant/chemistryProperties
+    wmake
 
-    pReff pReff [1 -1 -2 0 0 0 0] 1.01325E+05;
-
-2. Have a new field-file: pd (dynamic pressure), which is actually your solved pressure variable (p is more or less a dummy field)
-
+This will create the application <em>solver</em> in your $FOAM_USER_BIN folder.
 
 
