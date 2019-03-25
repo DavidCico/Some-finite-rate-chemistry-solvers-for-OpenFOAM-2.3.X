@@ -27,4 +27,12 @@ To compile any solver, go inside the folder of the desired one and execute the c
 
 This will create the application <em>solver</em> in your $FOAM_USER_BIN folder.
 
+All the solvers require adding some additional files:
+
+1. Add thermodynamic pressure level in constant/chemistryProperties
+
+    pReff pReff [1 -1 -2 0 0 0 0] 1.01325E+05;
+
+2. Further, you will need a new field-file: pd (dynamic pressure), which is actually your solved pressure variable (p is more or less a dummy field)
+
 
