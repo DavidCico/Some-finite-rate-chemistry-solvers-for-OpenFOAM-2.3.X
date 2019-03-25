@@ -1,4 +1,4 @@
-# Some-solvers-for-OpenFOAM-2.3.X
+# Some-finite-rate-chemistry-solvers-for-OpenFOAM-2.3.X
 
 <p align="justify">This repository contains different solvers for OpenFOAM 2.3.X. All of the different solvers, are used for combustion and use a <a href="https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_thry/i1309364.html"> finite rate chemistry approach </a>, in which the different species and elementary chemical reactions are modelled following the Arrhenius law.</p>
 
