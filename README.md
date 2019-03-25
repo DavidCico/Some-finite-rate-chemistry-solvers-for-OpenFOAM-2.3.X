@@ -1,13 +1,15 @@
 # Some-solvers-for-OpenFOAM-2.3.X
 
-<p align="justify">This repository contains different solvers for OpenFOAM 2.3.X. All of the different solvers, are used for combustion and use a <a href="https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_thry/i1309364.html"> finite rate chemistry approach </a>, in which the different species and elementary chemical reactions are modelled following the Arrhenius law</p>
+<p align="justify">This repository contains different solvers for OpenFOAM 2.3.X. All of the different solvers, are used for combustion and use a <a href="https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_thry/i1309364.html"> finite rate chemistry approach </a>, in which the different species and elementary chemical reactions are modelled following the Arrhenius law.</p>
 
 <p align="justify">The different solvers are based on a <a href="https://ccse.lbl.gov/Research/LowMach/lowMach.html"> low Mach number</a> assumption, where the pressure is decoupled from the thermodynamic properties of the fluid.</p>
+
+Duwig, Christophe, et al. Large Eddy Simulations of a piloted lean premix jet flame using finite-rate chemistry. <em>Combustion Theory and Modelling</em>, 15(4):537-568, 2011.
 
 ## Files description
 
 <ul>
-    <li><p align="justify">"<em>diff_sc_reactingLMFoam</em>"</p></li>
+    <li><p align="justify">"<em>diff_sc_reactingLMFoam</em>"</p> is </li>
     <li><p align="justify">"<em>dynreactingLMFoam</em>"</p></li>
     <li><p align="justify">"<em>reactingBoxturbFoam</em>"</p></li>
 </ul>
@@ -19,29 +21,13 @@
 
 ## Instructions on program
 
-Compile the library using:
+All solvers require to:
 
-    wmake libso
+1. Add thermodynamic pressure level in constant/chemistryProperties
 
-This will create the library <em>libInflowTurbulence.so</em> in your $FOAM_USER_LIBBIN folder.
+    pReff pReff [1 -1 -2 0 0 0 0] 1.01325E+05;
 
-Add this to the case controlDict:
+2. Have a new field-file: pd (dynamic pressure), which is actually your solved pressure variable (p is more or less a dummy field)
 
-    libs ("libInflowTurbulence.so");
 
-And specify for U at inlet with settings fitting your case
-
-    inlet
-    {
-      overlap         0.5;    // How much the vortons can overlap each other
-        L               0.01;    // Integral length scale
-        eta             1e-04;  // Kolmogorov length
-        Cl              6.783;  // Constant used for E(k) 6.783 in paper
-        Ceta            0.4;  // Constant used for E(k) 0.4 in paper
-        type            inflowGenerator<homogeneousTurbulence>;
-        fluctuationScale (1 1 1); // Fluctuation scale in each direction
-        referenceField  uniform (10 0 0); // Reference value for inlet
-        R               uniform (1 0 0 1 0 1); // Reynolds stress tensor
-        value           uniform (10 0 0); 
-    }
 
