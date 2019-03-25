@@ -29,7 +29,7 @@ This will create the application <em>solver</em> in your $FOAM_USER_BIN folder.
 
 All the solvers require adding some additional files:
 
-1. Add thermodynamic pressure level in constant/chemistryProperties
+1.Add thermodynamic pressure level in constant/chemistryProperties
 
     pReff pReff [1 -1 -2 0 0 0 0] 1.01325E+05;
 
