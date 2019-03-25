@@ -1,7 +1,14 @@
 # Some-solvers-for-OpenFOAM-2.3.X
 This repository contains different solvers for OpenFOAM 2.3.X
 
-## 
+## Files description
+
+<ul>
+    <li><p align="justify">"<em>diff_sc_reactingLMFoam</em>"</p></li>
+    <li><p align="justify">"<em>dynreactingLMFoam</em>"</p></li>
+    <li><p align="justify">"<em>reactingBoxturbFoam</em>"</p></li>
+</ul>
+
 
 ## Prerequisites
 
